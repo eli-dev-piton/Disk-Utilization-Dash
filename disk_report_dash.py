@@ -89,7 +89,7 @@ app.layout = html.Div([
     ])
         ],
         )
-
+########################## Controller ###########################################
 def save_file(name, content):
     """Decode and store a file uploaded with Plotly Dash."""
     data = content.encode("utf8").split(b";base64,")[1]
@@ -112,7 +112,7 @@ def file_download_link(filename):
     location = "/download/{}".format(urlquote(filename))
     return html.A(filename, href=location)
 
-########################## Controller ###########################################
+
 @app.callback(
     Output("file-list", "children"),
     [Input("upload-data", "filename"), Input("upload-data", "contents")],
