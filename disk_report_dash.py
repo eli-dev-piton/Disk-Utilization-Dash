@@ -10,7 +10,7 @@ from dash.dependencies import Input, Output
 import pandas as pd
 import getpass
 
-
+############################ Model #########################################
 UPLOAD_DIRECTORY = "/Documents"
 
 if not os.path.exists(UPLOAD_DIRECTORY):
@@ -20,7 +20,7 @@ name = "data-vinfolio.csv"
 user = getpass.getuser()
 path = str("C:\\Users\\"+user+"\\Documents\\Dev\\python\\disk_utilization_report\\data\\"+name)
 df = pd.read_csv(path)
-
+############################################################################
 
 # Normally, Dash creates its own Flask server internally. By creating our own,
 # we can create a route for downloading files directly:
@@ -33,7 +33,7 @@ def download(path):
     """Serve a file from the upload directory."""
     return send_from_directory(UPLOAD_DIRECTORY, path, as_attachment=True)
 
-
+################### VIEW #################################################
 app.layout = html.Div([
         html.H1("Xtivia Report Dash", style={'textAlign': 'center', 'color':'white','background-color':'green'}),
         html.H2("Upload a CSV so that a chart can be made"),
@@ -112,7 +112,7 @@ def file_download_link(filename):
     location = "/download/{}".format(urlquote(filename))
     return html.A(filename, href=location)
 
-
+########################## Controller ###########################################
 @app.callback(
     Output("file-list", "children"),
     [Input("upload-data", "filename"), Input("upload-data", "contents")],
