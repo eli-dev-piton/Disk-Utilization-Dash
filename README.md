@@ -8,3 +8,5 @@ Upload or find the CSV with the option.
 Has a drop down to select the disk to examine. 
 Creates a line chart with that will illustrate the disk utilization usage. 
 ![Screenshot](screenshot1.PNG)
+### It is a web app so all the work can be handled on a single page
+![Screenshot](screenshot2.PNG)
